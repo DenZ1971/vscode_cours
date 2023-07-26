@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+
 module.exports = {
     entry: "./src/index.js",
     mode: "development",
@@ -15,6 +16,7 @@ module.exports = {
             template: "./src/index.pug",
             filename: "index.html",
         }),
+        
     ],
     module: {
         rules: [
@@ -34,11 +36,7 @@ module.exports = {
                 test: /\.pug$/,
                 loader: "pug-loader",
             },
-            {
-                test: /\.js$/,
-                exclude: "/node_modules/",
-                use: "eslint-loader"
-            },
+            
         ],
     },
 };
